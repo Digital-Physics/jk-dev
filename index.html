@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jdk-dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mixing-board.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="canvas-wrapper">
+            <canvas id="canvas-root"></canvas>
+            <div id="controls-panel">
+                <div class="mixer-row">
+                    <!-- <div class="channel-strip">
+                        <div class="param-value" id="mix-value">0.00</div>
+                        <div class="slider-container">
+                            <input type="range" id="preset-mix-input" min="0" max="32" step="0.01" value="0">
+                        </div>
+                        <label class="param-label">MIX</label>
+                    </div> -->
+
+                    <div class="channel-strip">
+                        <div class="param-value" id="particle-count-value">120</div>
+                        <div class="slider-container">
+                            <input type="range" id="particle-count-input" min="50" max="400" value="120">
+                        </div>
+                        <label class="param-label">COUNT</label>
+                    </div>
+
+                    <div class="channel-strip">
+                        <div class="param-value" id="interaction-radius-value">70</div>
+                        <div class="slider-container">
+                            <input type="range" id="interaction-radius-input" min="30" max="150" value="70">
+                        </div>
+                        <label class="param-label">RADIUS</label>
+                    </div>
+
+                    <div class="channel-strip">
+                        <div class="param-value" id="field-strength-value">1.20</div>
+                        <div class="slider-container">
+                            <input type="range" id="field-strength-input" min="0.1" max="3" step="0.1" value="1.2">
+                        </div>
+                        <label class="param-label">STRENGTH</label>
+                    </div>
+
+                    <div class="channel-strip">
+                        <div class="param-value" id="cohesion-value">0.60</div>
+                        <div class="slider-container">
+                            <input type="range" id="cohesion-input" min="0.1" max="3" step="0.1" value="0.6">
+                        </div>
+                        <label class="param-label">COHESION</label>
+                    </div>
+
+                    <div class="channel-strip">
+                        <div class="param-value" id="turbulence-value">2.5</div>
+                        <div class="slider-container">
+                            <input type="range" id="turbulence-input" min="0.5" max="5" step="0.1" value="2.5">
+                        </div>
+                        <label class="param-label">TURB</label>
+                    </div>
+
+                    <div class="channel-strip">
+                        <div class="param-value" id="decay-rate-value">0.12</div>
+                        <div class="slider-container">
+                            <input type="range" id="decay-rate-input" min="0.05" max="0.5" step="0.01" value="0.12">
+                        </div>
+                        <label class="param-label">DECAY</label>
+                    </div>
+                </div>
+
+                <div class="controls-footer">
+                    <button id="play-pause-button" class="btn primary-btn">PAUSE</button>
+                    <button id="randomize-button" class="btn secondary-btn">RANDOM</button>
+                    <div class="info-block">
+                        Scroll Down To See Projects & Contact Info
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <section class="section">
+                    <h2 class="section-title">Featured Projects</h2>
+
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/pymeister_screenshot.png" alt="Pymeister Screenshot">
+                            </div>
+                            <h3 class="project-title">Pymeister</h3>
+                            <p class="project-description">
+                                A browser-based Python interpeter with coding examples and search functionality. 
+                                Code examples include Python syntax, data structures, algorithms, and machine learning. 
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pyodide</span>
+                                <span class="tech-tag">Education</span>
+                                <span class="tech-tag">Interview Prep</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.pymeister.com" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/scriptmonger_screenshot.png" alt="Scriptmonger Screenshot">
+                            </div>
+                            <h3 class="project-title">Scriptmonger</h3>
+                            <p class="project-description">
+                                Screenwriting software that provides a FREE alternative to Final Draft. 
+                                Features industry-standard formatting, AI integration through .json mode, a cork board for ideation, delta change history for undo/redo, pdf exports, etc..
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Web Application</span>
+                                <span class="tech-tag">Screenwriting</span>
+                                <span class="tech-tag">Editor</span>
+                                <span class="tech-tag">Creative Tools</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://scriptmonger.org" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/nets-vs-automata_screenshot.png" alt="Nets vs Automata Screenshot">
+                            </div>
+                            <h3 class="project-title">Nets vs. Automata</h3>
+                            <p class="project-description">
+                                A public, distributed machine learning research project that pits the statistical pattern recognition power of neural networks against the complexity generated by deterministic cellular automata systems. 
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Client-Side ML</span>
+                                <span class="tech-tag">TensorFlow.js</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://nets-vs-automata.net" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/khatchig-bot_screenshot.png" alt="Khatchig Bot Screenshot">
+                            </div>
+                            <h3 class="project-title">Khatchig-Bot</h3>
+                            <p class="project-description">
+                                A persona-infused chatbot with a biologically-inspired user interface. 
+                                Features an interactive simulation and text responses that are corruptible by user actions. 
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Model Context</span>
+                                <span class="tech-tag">ChatGPT API</span>
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">Simulation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://khatchig-bot.onrender.com" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/digital_physics_poster.png" alt="Digital Physics Film Poster">
+                            </div>
+                            <h3 class="project-title">Digital Physics (Film)</h3>
+                            <p class="project-description">
+                                A feature film exploring information, complexity, and compression in a traditional storytelling narrative.
+                                The movie is available on Amazon, Apple, Tubi, and other platforms.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Film Production</span>
+                                <span class="tech-tag">Small Business</span>
+                                <span class="tech-tag">Creative</span>
+                                <span class="tech-tag">Collaboration</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://digitalphysicsmovie.onrender.com/" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/digital_physics_game.png" alt="Digital Physics Game Screenshot">
+                            </div>
+                            <h3 class="project-title">Digital Physics (Game)</h3>
+                            <p class="project-description">
+                                A recursive, three-level, Super Mario-style puzzle game mixing pixel art and film media. 
+                                Built with Python, PyGame, PyTorch, Pygbag (WebAssembly) and distributed to itch.io.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PyGame</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">WebAssembly</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://digital-physics.itch.io/digital-physics" target="_blank">Play Game</a>
+                            </div>
+                        </div>
+
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/gpteopardy_screenshot.png" alt="GPTeopardy Screenshot">
+                            </div>
+                            <h3 class="project-title">GPTeopardy</h3>
+                            <p class="project-description">
+                                A daily, natural language game testing knowledge and word recall. 
+                                Features curated, LLM-generated, question-and-answer pairs, a natural language distance metric, and a daily leaderboard.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">NLP API</span>
+                                <span class="tech-tag">Semantic Distance</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Cron Jobs</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.gpteopardy.com/" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/path_time_scroll.GIF" alt="Scrolling Train Times GIF">
+                            </div>
+                            <h3 class="project-title">Scrolling Train Times</h3>
+                            <p class="project-description">
+                                A hardware project combining a Raspberry Pi, an LED matrix, SSH connectivity, web scraping, and Path Train times...
+                                with Animation and Music.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Raspberry Pi</span>
+                                <span class="tech-tag">LED Matrix</span>
+                                <span class="tech-tag">Data Scraping</span>
+                                <span class="tech-tag">SSH</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Digital-Physics/raspberry-pi-PATH-train-LED-display" target="_blank">View Code</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/turing_machine_screenshot.png" alt="Sqrt(2) Turing Machine Screenshot">
+                            </div>
+                            <h3 class="project-title">√2 Turing Machine</h3>
+                            <p class="project-description">
+                                A 27-state, 12-symbol, Turing Machine that computes the binary expansion of the square root of 2 from a blank tape. 
+                                Showcases a step-by-step TM simulation that uses E cells (workspace) and F cells (final output bits) on the tape, like Turing used in his 1936 paper.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Computability</span>
+                                <span class="tech-tag">Turing Machine</span>
+                                <span class="tech-tag">Irrational Number</span>
+                                <span class="tech-tag">Recurse Center</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://turing-machine-sqrt.onrender.com/" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/particle_affinity_screenshot.png" alt="Particle Affinity Screenshot">
+                            </div>
+                            <h3 class="project-title">Particle Affinity Simulation</h3>
+                            <p class="project-description">
+                                A physics-based particle simulation written in Rust and compiled to WebAssembly with WebGPU rendering. 
+                                Explores complex structures emerging from simple rules, and showcases the ability to simulate this at scale in the browser. 
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">WebAssembly</span>
+                                <span class="tech-tag">WebGPU</span>
+                                <span class="tech-tag">Recurse Center</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://particle-affinity-rust-wasm-webgpu.onrender.com/" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/proxy_model_screenshot.png" alt="Proxy Model Screenshot">
+                            </div>
+                            <h3 class="project-title">Proxy Model</h3>
+                            <p class="project-description">
+                                A trained machine learning "Proxy Model" demonstrating the ability to approximate a computationally-expensive stochastic option valuation method in a more efficient way.
+                                The project also demonstrates the inability of the fit model to accurately extrapolate beyond the range of interest rates used in the training data. 
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Option Valuation</span>
+                                <span class="tech-tag">Finance</span>
+                                <span class="tech-tag">Actuarial</span>
+                                <span class="tech-tag">Function Approximation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Digital-Physics/stochastic_shortcut" target="_blank">View Code</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/rl_writing_sample.png" alt="Reinforcement Learning Article Screenshot">
+                            </div>
+                            <h3 class="project-title">Reinforcement Learning Article</h3>
+                            <p class="project-description">
+                                An introductory reinforcement learning article published in <em>The Actuary</em> magazine outlining the relationship between discounted RL rewards and discounted business cash flows.
+                                The article draws parallels between a Bellman equation and math used by actuaries in the insurance industry. 
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Reinforcement Learning</span>
+                                <span class="tech-tag">Finance</span>
+                                <span class="tech-tag">Writing</span>
+                                <span class="tech-tag">Actuarial Science</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.theactuary.com/features/2021/08/20/environment-agents-introduction-reinforcement-learning" target="_blank">Read Article</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/simple_rules.png" alt="Simple Rules Screenshot">
+                            </div>
+                            <h3 class="project-title">Simple Rules Presentation</h3>
+                            <p class="project-description">
+                                A Recurse Center presentation on "Simple Rules". 
+                                Directed Computation, Emergent Complexity, and Predictability.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Presentation</span>
+                                <span class="tech-tag">Complex Systems</span>
+                                <span class="tech-tag">Recurse Center</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://simple-rules-presentation.onrender.com/" target="_blank">View Presentation</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/fellow_screenshot.png" alt="Fellow of the Society of Actuaries Screenshot">
+                            </div>
+                            <h3 class="project-title">LLM w/ Actuarial Valuation Function Calling</h3>
+                            <p class="project-description">
+                                MCP precursor: Actuarial function calling with ChatGPT. 
+                                Features argument extraction from text prompt and computed result injected into natural language response.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Actuarial Science</span>
+                                <span class="tech-tag">LLMs</span>
+                                <span class="tech-tag">Function Calling</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.soa.org/493540/globalassets/assets/files/edu/edu-new-fellows-archive.pdf target="_blank">View Code</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/mcp_synth_screenshot.png" alt="MCP Synth Server Screenshot">
+                            </div>
+                            <h3 class="project-title">MCP Synth Server</h3>
+                            <p class="project-description">
+                                A Model Context Protocol (MCP) server for generating synth music. 
+                                Leverages structured prompts and sound samples to generate music to accompany text responses.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">MCP Server</span>
+                                <span class="tech-tag">LLM DJ</span>
+                                <span class="tech-tag">Synth Music</span>
+                                <span class="tech-tag">Recurse Center</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Digital-Physics/mcp-server-synth" target="_blank">View Code</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/terminal_spaceinvaders_screenshot.png" alt="Terminal Space Invaders Screenshot">
+                            </div>
+                            <h3 class="project-title">Terminal Space Invaders</h3>
+                            <p class="project-description">
+                                A classic Space Invaders clone playable in the terminal. 
+                                Implemented in Python, combining retro arcade style with modern code simplicity.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Terminal Game</span>
+                                <span class="tech-tag">Retro</span>
+                                <span class="tech-tag">Recurse Center</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Digital-Physics/terminal-space-invaders" target="_blank">View Code</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/rl_research_screenshot.png" alt="Reinforcement Learning Screenshot">
+                            </div>
+                            <h3 class="project-title">Reinforcement Learning</h3>
+                            <p class="project-description">
+                                Research: A reinforcement learning project to analyze agents taking actions in a complex and dynamic cellular automata environments.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Reinforcement Learning</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Visualization</span>
+                                <span class="tech-tag">Recurse Center</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.nets-vs-automata.net/rl.html" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/path_to_the_cup_screenshot.png" alt="Path to the Cup Screenshot">
+                            </div>
+                            <h3 class="project-title">Path to the Cup</h3>
+                            <p class="project-description">
+                            A fan blog following the New York Red Bulls' journey through the MLS season, with a special focus on the PATH train experience for fans traveling to matches.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">PATH Train API</span>
+                                <span class="tech-tag">Animation</span>
+                                <span class="tech-tag">Soccer</span>
+                                <span class="tech-tag">Creative</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.pathtothecup.com" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/rag_screenshot.png" alt="RAG and Vector DB Screenshot">
+                            </div>
+                            <h3 class="project-title">Screenplay RAG</h3>
+                            <p class="project-description">
+                                A language model with Retrieval Augmented Generation for answering questions from screenplay PDFs.
+                                Provides retrieval-source metadata information for validation purposes.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Film</span>
+                                <span class="tech-tag">RAG</span>
+                                <span class="tech-tag">Vector Database</span>
+                                <span class="tech-tag">Langchain</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Digital-Physics/langchain-chroma-vectorDB" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/neural_cellular_automata.gif" alt="RAG and Vector DB Screenshot">
+                            </div>
+                            <h3 class="project-title">Neural Cellular Automata</h3>
+                            <p class="project-description">
+                                An interactive Neural Cellular Automata. Destroy cells and watch regrowth. Grow a new image from a single black cell. An interactive version of a NCA character featured in <em>Digital Physics</em> the game.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">Neural Cellular Automata</span>
+                                <span class="tech-tag">Neural Nets</span>
+                                <span class="tech-tag">Morphogenesis</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Digital-Physics/neural-cellular-automata-pygame" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="img/philadelphia_philms_screenshot.png" alt="Philadelphia Films Screenshot">
+                            </div>
+                            <h3 class="project-title">Philadelphia Philms</h3>
+                            <p class="project-description">
+                                A film production company started in Philadelphia, now based in Jersey City.  
+                                Highlights include music videos, short films, and one feature film production.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Film</span>
+                                <span class="tech-tag">Production</span>
+                                <span class="tech-tag">Post Production</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.philadelphiaphilms.com" target="_blank">Visit Site</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+                <!-- Contact Section -->
+                <section class="section">
+                    <h2 class="section-title">Contact & Links</h2>
+                    <div class="contact-info">
+                        <p style="font-size: 1.2rem; margin-bottom: 20px; font-family: 'Orbitron', monospace; color: #00ffff; text-shadow: 0 0 10px rgba(0,255,255,0.5);">Let's connect and collaborate!</p>
+                        <div class="contact-links">
+                            <a href="mailto:jdkhanlian@gmail.com">
+                                📧 jdkhanlian@gmail.com
+                            </a>
+                            <a href="https://github.com/Digital-Physics" target="_blank">
+                                🔗 GitHub: Digital-Physics
+                            </a>
+                            <a href="https://www.linkedin.com/in/philadelphiaphilms" target="_blank">
+                                🤝🏻 LinkedIn: Digital-Physics
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>        
+    </div>
+
+    <!-- projects -->
+    
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
