@@ -291,7 +291,8 @@ body, html {
 }
 
 .scroll-indicator {
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
