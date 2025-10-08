@@ -17,29 +17,30 @@
 
 #controls-panel {
     position: relative;
-    bottom: 20px;
+    margin-top: 5px;
+    /* bottom: 20px; */
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(135deg, rgba(31, 41, 55, 0.3), rgba(55, 65, 81, 0.3));
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(0, 255, 255, 0.3);
-    border-radius: 20px;
-    padding: 30px 40px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 5px 4px;
     box-shadow: 
         0 0 40px rgba(0, 255, 255, 0.2),
         inset 0 0 40px rgba(255, 0, 128, 0.05);
-    max-width: 600px;
+    max-width: 350px;
     width: auto;
     z-index: 100;
-    pointer-events: auto; /* Make sure it's interactive */
+    pointer-events: auto; 
 }
 
 .mixer-row {
     display: flex;
-    gap: 15px;
+    gap: 5px;
     align-items: flex-end;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 3px;
 }
 
 .channel-strip {
@@ -68,14 +69,14 @@
     color: var(--neon-pink);
     font-size: 0.7rem;
     font-weight: bold;
-    margin-bottom: 12px;
+    margin-bottom: 2px;
     text-shadow: 0 0 8px var(--neon-pink);
-    min-height: 20px;
+    min-height: 10px;
     text-align: center;
 }
 
 .slider-container {
-    height: 150px;
+    height: 60px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,27 +85,28 @@
     width: 100%;
 }
 
-/* Vertical Slider Styling */
+/* Vertical Slider Styling (height & width swapped; rotated 90) */
 input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
-    width: 150px;
-    height: 6px;
+    width: 60px;
+    height: 2px;
     background: linear-gradient(90deg, rgba(255, 0, 128, 0.3), rgba(0, 255, 255, 0.3));
-    border-radius: 10px;
+    border-radius: 2px;
     outline: none;
     cursor: pointer;
-    transform: rotate(-90deg);
+    transform: rotate(-90deg) translateX(-5px);
     box-shadow: 
         inset 0 0 10px rgba(0, 0, 0, 0.5),
         0 0 10px rgba(0, 255, 255, 0.2);
 }
 
+/* slider */
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 6px;
+    height: 15px;
     background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan));
     border-radius: 50%;
     cursor: pointer;
@@ -112,6 +114,7 @@ input[type="range"]::-webkit-slider-thumb {
         0 0 15px rgba(255, 0, 128, 0.8),
         0 0 25px rgba(0, 255, 255, 0.5);
     transition: all 0.2s ease;
+    transform: translateY(-5px);
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
@@ -119,11 +122,12 @@ input[type="range"]::-webkit-slider-thumb:hover {
     box-shadow: 
         0 0 20px rgba(255, 0, 128, 1),
         0 0 35px rgba(0, 255, 255, 0.8);
+    transform: translateY(-5px);
 }
 
 input[type="range"]::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
+    width: 6px;
+    height: 15px;
     background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan));
     border: none;
     border-radius: 50%;
@@ -132,6 +136,7 @@ input[type="range"]::-moz-range-thumb {
         0 0 15px rgba(255, 0, 128, 0.8),
         0 0 25px rgba(0, 255, 255, 0.5);
     transition: all 0.2s ease;
+    transform: translateY(-5px);
 }
 
 input[type="range"]::-moz-range-thumb:hover {
@@ -139,6 +144,7 @@ input[type="range"]::-moz-range-thumb:hover {
     box-shadow: 
         0 0 20px rgba(255, 0, 128, 1),
         0 0 35px rgba(0, 255, 255, 0.8);
+    transform: translateY(-5px);
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
@@ -157,7 +163,7 @@ input[type="range"]::-moz-range-track {
 
 .param-label {
     color: var(--neon-cyan);
-    font-size: 0.65rem;
+    font-size: 0.40rem;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -167,16 +173,16 @@ input[type="range"]::-moz-range-track {
 
 .controls-footer {
     display: flex;
-    gap: 20px;
+    /* gap: 2px; */
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 5px;
     border-top: 1px solid rgba(0, 255, 255, 0.2);
     flex-wrap: wrap;
 }
 
 .btn {
-    padding: 12px 30px;
+    padding: 2px 3px;
     font-weight: 600;
     border-radius: 25px;
     border: 2px solid;
@@ -184,31 +190,33 @@ input[type="range"]::-moz-range-track {
     font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     transition: all 0.3s ease;
     background: transparent;
 }
 
-.primary-btn {
+.secondary-btn {
+    margin: 0px 10px;
     color: var(--neon-cyan);
     border-color: var(--neon-cyan);
     text-shadow: 0 0 5px var(--neon-cyan);
 }
 
-.primary-btn:hover {
+.secondary-btn:hover {
+    margin: 0px 10px;
     background: rgba(0, 255, 255, 0.1);
     box-shadow: 
         0 0 20px rgba(0, 255, 255, 0.6),
         inset 0 0 20px rgba(0, 255, 255, 0.1);
 }
 
-.secondary-btn {
+.primary-btn {
     color: var(--neon-pink);
     border-color: var(--neon-pink);
     text-shadow: 0 0 5px var(--neon-pink);
 }
 
-.secondary-btn:hover {
+.primary-btn:hover {
     background: rgba(255, 0, 128, 0.1);
     box-shadow: 
         0 0 20px rgba(255, 0, 128, 0.6),
@@ -217,19 +225,15 @@ input[type="range"]::-moz-range-track {
 
 .info-block {
     text-align: center;
+    margin: 5px;
     color: rgba(0, 255, 255, 0.6);
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     text-shadow: 0 0 3px rgba(0, 255, 255, 0.4);
     flex-basis: 100%;
+    z-index: 100;
 }
 
-@media (max-width: 1200px) {
-    .mixer-row {
-        flex-wrap: wrap;
-    }
-}
-
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #controls-panel {
         padding: 20px;
     }
@@ -256,4 +260,4 @@ input[type="range"]::-moz-range-track {
     .channel-strip {
         width: 55px;
     }
-}
+} */

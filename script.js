@@ -1,11 +1,10 @@
-// --- Simplified script.js (presets & interpolation removed) ---
 // --- Default Params (single style object) ---
 let params = {
     particleCount: 120,
-    fieldStrength: 0.8,
-    turbulence: 0.6,
-    cohesion: 0.6,
     interactionRadius: 70,
+    fieldStrength: 0.8,
+    cohesion: 0.6,
+    turbulence: 0.6,
     decayRate: 0.12,
     v0: 1.0,
     v1: 1.0,
@@ -321,6 +320,13 @@ function setupEventListeners() {
 function handleScroll() {
     const sections = document.querySelectorAll('.section');
     const triggerBottom = window.innerHeight / 5 * 4;
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+
+    if (window.scrollY > 100) {
+        scrollIndicator.classList.add('hidden');
+    } else {
+        scrollIndicator.classList.remove('hidden');
+    }
 
     sections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
@@ -334,7 +340,8 @@ window.addEventListener('scroll', handleScroll);
 
 function initApp() {
     // 1. Set initial UI values
-    updateUIFromParams();
+    // updateUIFromParams();
+    randomize();
 
     // 2. Set up event listeners
     setupEventListeners();
