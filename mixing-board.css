@@ -136,7 +136,6 @@ input[type="range"]::-moz-range-thumb {
         0 0 15px rgba(255, 0, 128, 0.8),
         0 0 25px rgba(0, 255, 255, 0.5);
     transition: all 0.2s ease;
-    transform: translateY(-5px);
 }
 
 input[type="range"]::-moz-range-thumb:hover {
@@ -144,7 +143,6 @@ input[type="range"]::-moz-range-thumb:hover {
     box-shadow: 
         0 0 20px rgba(255, 0, 128, 1),
         0 0 35px rgba(0, 255, 255, 0.8);
-    transform: translateY(-5px);
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
