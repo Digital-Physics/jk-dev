@@ -1,3 +1,3 @@
-project page:
+Jon Khanlian's project page:
 
-https://jk-dev.onrender.com/
+https://jk-dev.com/
