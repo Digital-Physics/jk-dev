@@ -255,7 +255,8 @@ body, html {
 .project-links a {
     display: inline-block;
     padding: 8px 16px;
-    background: linear-gradient(45deg, #ff0080, #00ffff);
+    /* background: linear-gradient(45deg, #ff0080, #00ffff); */
+    background: #0080ff;
     color: white;
     text-decoration: none;
     border-radius: 20px;
@@ -281,7 +282,7 @@ body, html {
     background: linear-gradient(45deg, #0080ff, #ff0080);
     color: white;
     padding: 5px 12px;
-    border-radius: 20px;
+    border-radius: 2px;
     font-size: 0.8rem;
     font-weight: bold;
     font-family: 'Orbitron', monospace;
