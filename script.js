@@ -49,6 +49,27 @@ const noise = (x, y, z) => {
     );
 };
 
+async function addInfoToBackend() {
+    const use_localhost = false;
+    const backend_address = use_localhost? 'http://127.0.0.1:8001/visits' : 'https://gpteopardy-backend-service.onrender.com/visits';
+    const response = await fetch(backend_address, {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            site_id: 'jk-dev',
+        })
+    });
+
+    if (response.ok) {
+        const result = await response.json();
+        return result;
+    } else {
+        console.error('Failed to track site visit:', response.statusText);
+    }
+}
+
 // --- Particle Class (mostly unchanged) ---
 class Particle {
     constructor(x, y) {
@@ -349,6 +370,9 @@ function initApp() {
     // 3. Initial particle setup and start animation
     resizeCanvas(); // Calls initParticles
     animate(ctx, canvas);
+
+    // track page loads
+    addInfoToBackend(); 
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
